@@ -1,3 +1,4 @@
+import http from 'http'
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import checker from 'vite-plugin-checker'
@@ -10,4 +11,10 @@ export default defineConfig({
       typescript: true,
     }),
   ],
+
+  server: {
+    hmr: {
+      server: new http.Server(),
+    },
+  },
 })
